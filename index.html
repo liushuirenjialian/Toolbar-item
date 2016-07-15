@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+	<html lang="en">
+	<head>		<meta charset="UTF-8">
+		<title>Document</title>
+		<link rel="stylesheet" href="css/index.css">
+    <style>
+  .w-bar-ext{
+  color:#fff;
+}
+.w-checkBar-checked .w-switcher:after,.w-switcher-on:after{
+  left:28px;
+}
+.w-checkBar-checked .w-switcher,.w-switcher-on{
+  background: #ecac00;
+  border-color:#ecac00;
+}
+.w-switcher,.w-switcher:after{
+  -webkit-transition:all 2s;
+}
+.w-switcher{
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 60px;
+  height: 32px;
+  background-color: #efefef;
+  border:1px solid #efefef;
+  border-radius: 32px;
+}
+input{
+  -webkit-appearance:none;
+}
+.w-switcher:after{
+  position: absolute;
+  left: 0;
+  top:0;
+  width: 32px;
+  height: 32px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,.2);
+  border-radius: 100%;
+  content: '';
+
+}
+  .w-bar{
+   display: block;
+   overflow: hidden;
+   position: relative;
+   padding: 0 14px;
+   line-height: 45px;
+   color:#535;
+   margin-bottom: -1px;
+   border:solid #d5d;
+   border-width: 1px 0;
+   background-color: #fff;
+  } 
+
+/* .w-bar-ext{
+  background-color: #fff;
+
+}
+.w-checkBar-checked .w-switcher:after,.w-switcher-on:after{
+  left: 42px;
+}
+.w-switcher{
+  position: relative;
+  background-color: #dfdfdf;
+  width: 100px;
+  height: 50px;
+  border-color: #fff;
+  border-radius: 32px;
+  display: inline-block;
+}
+.w-checkBar-checked .w-switcher, .w-switcher-on {
+    background: #ecac00;
+    border-color: #ecac00;
+}
+.w-switcher::after{
+  position: absolute;
+  top:0;
+  left:0;
+  border-radius: 32px;
+  background-color: #ffcc66;
+  border-color: #ffcc66;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  content: '';
+}
+.w-switcher{
+  transition: all 0.1s;
+}
+.w-checkBar-checked{
+
+} */
+    </style>
+  
+
+	</head>
+	<body>
+         <!-- 相同 public class，不同 private class-->
+          <div class="toolbar">
+          	<!-- a[href="javascript;:"].toolbar-item.toolbar-item-weixin*4-->
+          	<a href="javascript;:" class="toolbar-item toolbar-item-weixin">
+          	<span class="toolbar-layer"></span>
+          	</a>
+          	<a href="javascript;:" class="toolbar-item toolbar-item-feedback"></a>
+          	<a href="javascript;:" class="toolbar-item toolbar-item-app">
+            <span class="toolbar-layer"></span>          
+           	</a>
+          	<a href="javascript;:" class="toolbar-item toolbar-item-top"></a>
+          </div>
+       <div id="default-deitor" class="w-checkBar w-bar">
+       是否设为默认地址
+         <div class="w-bar-ext">
+           <b data-pro="switcher" class="w-switcher"></b>
+           <input type="checkbox">
+         </div>
+       </div>
+		<!-- data-mian 定义入口文件 -->
+		<script src="js/require.js" data-main="js/main"></script>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript">
+          var selected = "false";
+      $("#default-deitor").on("click", function() {
+        if(selected == "false"){
+            selected = "true";
+            $(this).addClass("w-checkBar-checked");
+        }else if(selected == "true"){
+            selected = "false";
+            $(this).removeClass("w-checkBar-checked");
+        }
+    } );
+      try{
+        alert('n');
+        consloe.log('llll')
+      }
+      catch(err){
+alert('worry~');
+      }
+    </script>
+	</body>
+	</html>	

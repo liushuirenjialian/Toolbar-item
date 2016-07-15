@@ -1,0 +1,86 @@
+$toolbar-size:52px;
+.toolbar-item,.toolbar-layer{
+  background: url(../img/toolbar.png) no-repeat;
+}
+
+.toolbar{
+   	position: fixed;
+	 left:50%;
+	 bottom:5px;
+	 margin-left:-$toolbar-size/2;
+}
+.toolbar-item{
+	position: relative;
+	display:block;
+	width:$toolbar-size;
+	height:$toolbar-size;
+	background:url(../img/toolbar.png) no-repeat;
+	margin-top:1px;
+	// 变化背景图片的位置
+	transition:background-position 1s;
+	&:hover{
+		.toolbar-layer{
+			@include opacity(1);
+			@include scale(1);
+		}
+	}
+}
+.toolbar-item-weixin{
+   background-position:0 -789px;
+   &:hover{background-position:0 -860px;
+   }
+   
+  // weierima
+   .toolbar-layer{
+    	height: 212px;
+    	background-position:0 0;
+    }
+
+}
+// 
+//.toolbar-layer{
+	//position:absolute;
+	//right:$toolbar-size - 6;
+	//bottom:0;
+	//:172px;
+	//background-image:url(../img/toolbar.png)no-repeat;
+	//opacity:0;
+	//filter:alpha(opacity=0);
+	//transform:scale(0.01);
+	//background-position:0 -789px;
+
+  // &:hover{background-position:0 -860px;}
+//}
+.toolbar-item-feedback{
+	background-position:0 -426px;
+   &:hover{background-position:0 -489px;}
+}
+.toolbar-item-app{
+	background-position:0 -550px;
+   &:hover{background-position:0 -612px;}
+       // height: 212px;
+ 	/* background-position:0 -222; */ 
+ 	// weierima
+   .toolbar-layer{
+    	height: 194px;
+    	background-position:0 -222px;
+    }
+}
+.toolbar-item-top{
+	background-position:0 -674px;
+   &:hover{background-position:0 -736px;}
+}
+.toolbar-layer{
+  position: absolute;
+  right:$toolbar-size - 6;
+  bottom:0;
+  width:172px;
+  background:url(../img/toolbar.png)no-repeat;
+  @include opacity(0);
+  // ie兼容写法
+  @include scale(0.01);
+  @include transform-roigin(95% 95%);
+  //过渡
+  @include transition(all 1s);
+
+}
